@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chance Fruitee</title>
+    <style>
+        /* Center the content on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default body margins */
+            background-color: #f4f4f4; /* Light background for better visibility */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrollbars during animation */
+        }
+            /* Background image styles */
+            background-image: url('background.jpg');
+            background-size: cover; /* Scale image to cover the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Avoid repeating the image */
+
+        /* Container to align the content */
+        div {
+            text-align: center; /* Center content horizontally */
+        }
+
+        /* Style for the title */
+        h1 {
+            opacity: 0; /* Start fully transparent */
+            filter: blur(10px); /* Start with a blur effect */
+            animation: fadeInBlur 2s ease-out forwards; /* Title animation */
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            padding: 10px 0;
+            margin: 20px 0;
+        }
+
+        /* Style for the paragraph */
+        p {
+            transform: translateY(100px); /* Start 100px below its position */
+            opacity: 0; /* Start fully transparent */
+            animation: slideIn 2s ease-out 2s forwards; /* Paragraph animation starts after 2s */
+            margin: 20px 0;
+        }
+
+        /* Keyframe for title fade-in and blur effect */
+        @keyframes fadeInBlur {
+            0% {
+                opacity: 0;
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        /* Keyframe for paragraph sliding in */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Chance Fruitee</h1>
-    <p>Discover your true self through crystals</p>
+    <div>
+        <h1>Chance Fruitee</h1>
+        <p>Discover yourself through crystals</p>
+    </div>
 </body>
 </html>
