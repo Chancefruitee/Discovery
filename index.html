@@ -121,10 +121,6 @@
         "Discover yourself through crystals"
     ];
 
-    // Keep track of the last selected indices
-    let lastBackgroundIndex = -1;
-    let lastParagraphIndex = -1;
-
     // Function to get a random index, ensuring it's different from the last one
     function getRandomIndex(list, lastIndex) {
         let newIndex;
@@ -134,14 +130,22 @@
         return newIndex;
     }
 
-    // Set a new random background
+    // Retrieve last indices from localStorage
+    let lastBackgroundIndex = localStorage.getItem('lastBackgroundIndex');
+    let lastParagraphIndex = localStorage.getItem('lastParagraphIndex');
+
+    // Convert them to integers if they exist
+    lastBackgroundIndex = lastBackgroundIndex ? parseInt(lastBackgroundIndex) : -1;
+    lastParagraphIndex = lastParagraphIndex ? parseInt(lastParagraphIndex) : -1;
+
+    // Select a new random background
     const newBackgroundIndex = getRandomIndex(backgrounds, lastBackgroundIndex);
-    lastBackgroundIndex = newBackgroundIndex; // Update last index
+    localStorage.setItem('lastBackgroundIndex', newBackgroundIndex); // Store in localStorage
     document.body.style.backgroundImage = `url('${backgrounds[newBackgroundIndex]}')`;
 
-    // Set a new random paragraph
+    // Select a new random paragraph
     const newParagraphIndex = getRandomIndex(paragraphs, lastParagraphIndex);
-    lastParagraphIndex = newParagraphIndex; // Update last index
+    localStorage.setItem('lastParagraphIndex', newParagraphIndex); // Store in localStorage
     document.getElementById('randomParagraph').textContent = paragraphs[newParagraphIndex];
 </script>
 
