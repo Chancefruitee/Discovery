@@ -101,7 +101,7 @@
 <body>
     <div class="content">
         <h1>Chance Fruitee</h1>
-        <p>Discover yourself through crystals.</p>
+        <p id="randomParagraph">Loading...</p> <!-- Placeholder for the random paragraph -->
     </div>
 
     <script>
@@ -110,7 +110,7 @@
     'https://chancefruitee.github.io/Discovery-test/background.jpg',
     'https://chancefruitee.github.io/Discovery-test/background01.jpg',
     'https://chancefruitee.github.io/Discovery-test/background02.jpg',
-    'https://chancefruitee.github.io/Discovery-test/background03.jpg',
+    'https://chancefruitee.github.io/Discovery-test/background03.jpg'
         ];
 
         // Function to select a random background
@@ -122,8 +122,24 @@
         // Set the random background
         const randomBackground = getRandomBackground();
         document.body.style.backgroundImage = `url('${randomBackground}')`;
+
+        // List of paragraphs
+        const paragraphs = [
+            "Bisous bisous",
+            "My husband is a genius",
+            "What would I do without him",
+            "Discover yourself through crystals",
+        ];
+
+        // Function to select a random paragraph
+        function getRandomParagraph() {
+            const randomIndex = Math.floor(Math.random() * paragraphs.length);
+            return paragraphs[randomIndex];
+        }
+
+        // Set the random paragraph
+        const randomParagraph = getRandomParagraph();
+        document.getElementById('randomParagraph').textContent = randomParagraph;
     </script>
 </body>
 </html>
-
-
