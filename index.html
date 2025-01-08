@@ -5,44 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chance Fruitee</title>
     <style>
-        /* Center the content on the page */
+        /* Add a background image to the entire page */
         body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ensure full height of the screen */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full height of the viewport */
-            margin: 0; /* Remove default body margins */
-            background-color: grey; /* Light background for better visibility */
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
             font-family: Arial, sans-serif;
-            overflow: hidden; /* Prevent scrollbars during animation */
-            /* Background image styles */
-            background-image: url('https://chancefruitee.github.io/Discovery-test/background.jpg');
+
+            /* Background image styles (to be set dynamically) */
             background-size: cover; /* Scale image to cover the entire screen */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Avoid repeating the image */
         }
-        /* Container to align the content */
-        div {
-            text-align: center; /* Center content horizontally */
+
+        /* Container for the content */
+        .content {
+            text-align: center;
+            padding: 20px;
+            width: 80%; /* Adjust width of the content container */
+            max-width: 800px; /* Prevent it from becoming too wide */
+            position: absolute; /* Position over the image */
         }
 
         /* Style for the title */
         h1 {
-            opacity: 0; /* Start fully transparent */
-            filter: blur(10px); /* Start with a blur effect */
-            animation: fadeInBlur 2s ease-out forwards; /* Title animation */
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
+            opacity: 0;
+            filter: blur(10px);
+            animation: fadeInBlur 2s ease-out forwards;
+            margin: 0; /* Remove default margin */
             padding: 10px 0;
-            margin: 20px 0;
+            color: #fff; /* Make the text white */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+            position: relative; /* Needed for absolute positioning of lines */
+            display: inline-block; /* Make the title an inline block to match the lines' width */
+        }
+
+        /* Create lines above and below the title */
+        h1::before,
+        h1::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: #fff; /* White color for the lines */
+            width: 100%; /* Set width to 100% of the title */
+            left: 0; /* Align with the left edge of the title */
+            transform: translateX(0); /* Keep the lines aligned to the title */
+        }
+
+        h1::before {
+            top: -10px; /* Adjust the distance above the title */
+        }
+
+        h1::after {
+            bottom: -10px; /* Adjust the distance below the title */
         }
 
         /* Style for the paragraph */
         p {
-            transform: translateY(100px); /* Start 100px below its position */
-            opacity: 0; /* Start fully transparent */
-            animation: slideIn 2s ease-out 2s forwards; /* Paragraph animation starts after 2s */
+            transform: translateY(100px);
+            opacity: 0;
+            animation: slideIn 2s ease-out 2s forwards;
             margin: 20px 0;
+            color: #fff; /* Make the text white */
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
         }
 
         /* Keyframe for title fade-in and blur effect */
@@ -71,9 +99,31 @@
     </style>
 </head>
 <body>
-    <div>
+    <div class="content">
         <h1>Chance Fruitee</h1>
-        <p>Discover yourself through crystals</p>
+        <p>Discover yourself through crystals.</p>
     </div>
+
+    <script>
+        // List of background images
+        const backgrounds = [
+    'https://chancefruitee.github.io/Discovery-test/background.jpg',
+    'https://chancefruitee.github.io/Discovery-test/background01.jpg',
+    'https://chancefruitee.github.io/Discovery-test/background02.jpg',
+    'https://chancefruitee.github.io/Discovery-test/background03.jpg',
+        ];
+
+        // Function to select a random background
+        function getRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            return backgrounds[randomIndex];
+        }
+
+        // Set the random background
+        const randomBackground = getRandomBackground();
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+    </script>
 </body>
 </html>
+
+
