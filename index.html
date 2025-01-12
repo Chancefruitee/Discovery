@@ -59,6 +59,7 @@
             bottom: -10px; /* Line below the title */
         }
 
+        /* Paragraph styles for all paragraphs */
         p {
             line-height: 1.8;
             transform: translateY(100px);
@@ -67,7 +68,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem; /* Ensures consistent font size across paragraphs */
+            font-size: 1.2rem; /* Ensure consistent font size for all paragraphs */
             word-wrap: break-word; /* Prevent text overflow */
             width: 100%;
             max-width: 600px; /* Prevent the paragraph from stretching too wide */
@@ -100,14 +101,14 @@
             }
         }
 
-        /* Ensuring that no paragraph font size changes in mobile */
+        /* Ensuring no font size changes on mobile */
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 2.5rem; /* Larger title for smaller screens */
             }
 
             p {
-                font-size: 1.2rem !important; /* Ensure font size stays fixed */
+                font-size: 1.2rem; /* Keep font size consistent on mobile */
                 width: 80%; /* Ensure it fits well on smaller screens */
             }
         }
