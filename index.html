@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chance Fruitee</title>
     <style>
+        html {
+            font-size: 16px; /* Set root font size explicitly */
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -27,6 +31,15 @@
             top: -20px;
         }
 
+        .line {
+            height: 2px;
+            margin: 5px auto;
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeInBlur 2s ease-out forwards;
+            width: 50%;
+        }
+
         h1 {
             display: inline-block;
             position: relative;
@@ -37,10 +50,9 @@
             margin: 0;
             color: #fff;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-            font-size: 3rem; /* Larger font for title */
+            font-size: 3rem; /* Increase title font size */
         }
 
-        /* Paragraph styles */
         p {
             line-height: 1.8;
             transform: translateY(100px);
@@ -49,7 +61,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem; /* Ensure consistent font size across paragraphs */
+            font-size: 1.2rem; /* Fixed font size for larger screens */
             word-wrap: break-word; /* Prevent text overflow */
             width: 100%;
             max-width: 600px; /* Prevent the paragraph from stretching too wide */
@@ -57,7 +69,6 @@
             margin-right: auto; /* Center the paragraph */
             display: inline-block;
             white-space: normal; /* Ensure proper line breaks */
-            overflow-wrap: break-word; /* Avoid breaking words unnecessarily */
         }
 
         /* Keyframes for animations */
@@ -83,40 +94,42 @@
             }
         }
 
-        /* Portrait mode - smaller screens */
-        @media screen and (max-width: 600px) and (orientation: portrait) {
+        /* Responsive typography for mobile devices */
+        @media screen and (max-width: 600px) {
             h1 {
-                font-size: 2.5rem; /* Adjust font size for portrait */
+                font-size: 2.5rem; /* Larger title for smaller screens */
             }
 
             p {
-                font-size: 1.2rem; /* Keep font size the same for all paragraphs */
-                width: 90%; /* Adjust width for better fit */
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto; /* Center text */
-                overflow-wrap: break-word; /* Ensure no overflow */
-                word-wrap: break-word; /* Avoid breaking words awkwardly */
+                font-size: 1rem; /* Smaller but consistent font size for mobile devices */
+                width: 80%; /* Ensure it fits well on smaller screens */
+            }
+
+            .line {
+                width: 40%; /* Adjust the line width on mobile */
             }
         }
 
-        /* Landscape mode - larger screens */
-        @media screen and (min-width: 601px) and (orientation: landscape) {
-            h1 {
-                font-size: 3rem; /* Larger font for landscape mode */
-            }
-
+        /* Portrait mode font size adjustment */
+        @media screen and (orientation: portrait) {
             p {
-                font-size: 1.2rem; /* Keep font size consistent */
-                width: 80%;
-                max-width: 600px;
+                font-size: 18px; /* Font size for portrait mode */
+            }
+        }
+
+        /* Landscape mode font size adjustment */
+        @media screen and (orientation: landscape) {
+            p {
+                font-size: 22px; /* Font size for landscape mode */
             }
         }
     </style>
 </head>
 <body>
     <div class="content">
+        <div class="line"></div>
         <h1>Chance Fruitee</h1>
+        <div class="line"></div>
         <p id="randomParagraph">Loading...</p>
     </div>
 
@@ -143,27 +156,22 @@
             `I can’t give you the world, but my whole world.<br>
             Je ne peux pas te donner le monde, mais mon monde entier.<br>
             No puedo darte el mundo, pero tú eres todo mi mundo.<br>
-            我或许无法给你全世界，但你却是我全部世界.`,
+            我或许无法给你全世界，但你却是我全部世界。`,
 
             `I am not greedy. There is only one small wish: you will always be in my life.<br>
             Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.<br>
             No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.<br>
-            我并不贪心，只有一个小小的愿望：你永远在我身边.`,
+            我并不贪心，只有一个小小的愿望：你永远在我身边。`,
 
             `There is nothing in the world that I can’t put aside except you.<br>
             Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.<br>
             No hay nada en el mundo que no pueda dejar de lado excepto tú.<br>
-            这个世界上除了你，没有什么事我放不下的.`,
+            这个世界上除了你，没有什么事我放不下的。`,
 
             `You light up my life.<br>
             Tu illumines ma vie.<br>
             Tú iluminas mi vida.<br>
-            你照亮了我的生命.`,
-
-            `I’m lazy and I don’t have any special skills, but I love you very well.<br>
-             Je suis paresseux et je n'ai pas de compétences particulières, mais je t'aime très bien.<br>
-             Soy perezoso y no tengo habilidades especiales, pero te quiero mucho.<br>
-             我很懒，也没有什么特长，但爱你事一把好手.`
+            你照亮了我的生命。`
         ];
 
         function getRandomIndex(list, lastIndex) {
