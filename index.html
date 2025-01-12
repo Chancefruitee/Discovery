@@ -24,11 +24,12 @@
             width: 80%;
             max-width: 800px;
             position: relative;
+            top: -20px; /* Shift everything upwards */
         }
 
         .line {
             height: 2px;
-            margin: 5px auto; /* Controlled spacing */
+            margin: 5px auto;
             background-color: #fff;
             opacity: 0;
             animation: fadeInBlur 2s ease-out forwards;
@@ -48,11 +49,11 @@
         }
 
         .line {
-            width: 50%; /* Matches the approximate width of the title */
+            width: 50%;
         }
 
         p {
-            line-height: 1.8; /* Added spacing between lines */
+            line-height: 1.8;
             transform: translateY(100px);
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
@@ -88,7 +89,7 @@
     <div class="content">
         <div class="line"></div> <!-- Line above the title -->
         <h1>Chance Fruitee</h1>
-        <div class="line" style="margin-top: -5px;"></div> <!-- Line below the title with reduced spacing -->
+        <div class="line" style="margin-top: -5px;"></div> <!-- Line below the title -->
         <p id="randomParagraph">Loading...</p>
     </div>
 
