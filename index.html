@@ -68,7 +68,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem; /* Explicit font size for desktop */
+            font-size: 1.2rem !important; /* Force consistent font size */
             word-wrap: break-word; /* Prevent text overflow */
             width: 100%;
             max-width: 600px; /* Prevent the paragraph from stretching too wide */
@@ -101,22 +101,17 @@
             }
         }
 
-        /* Ensure no font size changes on mobile */
+        /* Mobile device styling */
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 2.5rem; /* Larger title for smaller screens */
+                font-size: 2.5rem; /* Adjust title font size for mobile */
             }
 
             p {
                 font-size: 1.2rem !important; /* Force consistent font size on mobile */
-                width: 80%; /* Ensure it fits well on smaller screens */
+                width: 80%; /* Ensure the paragraph fits well on mobile */
                 max-width: 600px;
             }
-        }
-
-        /* Special case for "You light up my life" paragraph */
-        #randomParagraph {
-            font-size: 1.2rem !important; /* Force this paragraph to have the same font size */
         }
     </style>
 </head>
@@ -193,6 +188,5 @@
     </script>
 </body>
 </html>
-
 
 
