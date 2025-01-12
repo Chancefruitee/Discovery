@@ -9,92 +9,37 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh; /* Ensure full height of the screen */
+            height: 100vh;
             display: flex;
-            justify-content: center; /* Horizontally center */
-            align-items: center; /* Vertically center */
+            justify-content: center;
+            align-items: center;
             font-family: Arial, sans-serif;
-
-            /* Background image styles (to be set dynamically) */
-            background-size: cover; /* Scale image to cover the entire screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Avoid repeating the image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         /* Container for the content */
         .content {
             text-align: center;
             padding: 20px;
-            width: 80%; /* Adjust width of the content container */
-            max-width: 800px; /* Prevent it from becoming too wide */
-            position: absolute; /* Position over the image */
+            width: 80%;
+            max-width: 800px;
         }
 
         /* Style for the title */
         h1 {
-            opacity: 0;
-            filter: blur(10px);
-            animation: fadeInBlur 2s ease-out forwards;
-            margin: 0; /* Remove default margin */
+            margin: 0;
             padding: 10px 0;
-            color: #fff; /* Make the text white */
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
-            position: relative; /* Needed for absolute positioning of lines */
-            display: inline-block; /* Make the title an inline block to match the lines' width */
-        }
-
-        /* Create lines above and below the title */
-        h1::before,
-        h1::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: #fff; /* White color for the lines */
-            width: 100%; /* Set width to 100% of the title */
-            left: 0; /* Align with the left edge of the title */
-            transform: translateX(0); /* Keep the lines aligned to the title */
-        }
-
-        h1::before {
-            top: -10px; /* Adjust the distance above the title */
-        }
-
-        h1::after {
-            bottom: -10px; /* Adjust the distance below the title */
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Style for the paragraph */
         p {
-            transform: translateY(100px);
-            opacity: 0;
-            animation: slideIn 2s ease-out 2s forwards;
             margin: 20px 0;
-            color: #fff; /* Make the text white */
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
-        }
-
-        /* Keyframe for title fade-in and blur effect */
-        @keyframes fadeInBlur {
-            0% {
-                opacity: 0;
-                filter: blur(10px);
-            }
-            100% {
-                opacity: 1;
-                filter: blur(0);
-            }
-        }
-
-        /* Keyframe for paragraph sliding in */
-        @keyframes slideIn {
-            0% {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            color: #fff;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -105,46 +50,39 @@
     </div>
 
 <script>
+    // List of background images
     const backgrounds = [
         'https://chancefruitee.github.io/Discovery-test/Background-001.JPG',
         'https://chancefruitee.github.io/Discovery-test/Background-002.JPG',
         'https://chancefruitee.github.io/Discovery-test/Background-003.PNG',
         'https://chancefruitee.github.io/Discovery-test/Background-004.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-005.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-006.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-007.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-008.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-009.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-010.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-011.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-012.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-013.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-014.JPG',
-        'https://chancefruitee.github.io/Discovery-test/Background-015.JPG'
+        'https://chancefruitee.github.io/Discovery-test/Background-005.JPG'
     ];
 
+    // List of paragraphs
     const paragraphs = [
-        `I can’t give you the world, but my whole world.
-        Je ne peux pas te donner le monde, mais mon monde entier.
-        No puedo darte el mundo, pero tú eres todo mi mundo.
+        `I can’t give you the world, but my whole world.<br>
+        Je ne peux pas te donner le monde, mais mon monde entier.<br>
+        No puedo darte el mundo, pero tú eres todo mi mundo.<br>
         我或许无法给你全世界，但你却是我全部世界。`,
 
-        `I am not greedy. There is only one small wish: you will always be in my life.
-        Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.
-        No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.
-        我并不贪心，只有一个小小的愿望：你永远在我身边.`,
+        `I am not greedy. There is only one small wish: you will always be in my life.<br>
+        Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.<br>
+        No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.<br>
+        我并不贪心，只有一个小小的愿望：你永远在我身边。`,
 
-        `There is nothing in the world that I can’t put aside except you.
-        Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.
-        No hay nada en el mundo que no pueda dejar de lado excepto tú.
-        这个世界上除了你，没有什么事我放不下的.`,
+        `There is nothing in the world that I can’t put aside except you.<br>
+        Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.<br>
+        No hay nada en el mundo que no pueda dejar de lado excepto tú.<br>
+        这个世界上除了你，没有什么事我放不下的。`,
 
-        `You light up my life.
-        Tu illumines ma vie.
-        Tú iluminas mi vida.
-        你照亮了我的生命.`
+        `You light up my life.<br>
+        Tu illumines ma vie.<br>
+        Tú iluminas mi vida.<br>
+        你照亮了我的生命。`
     ];
 
+    // Function to get a random index
     function getRandomIndex(list, lastIndex) {
         let newIndex;
         do {
@@ -153,20 +91,24 @@
         return newIndex;
     }
 
+    // Retrieve last indices
     let lastBackgroundIndex = localStorage.getItem('lastBackgroundIndex');
     let lastParagraphIndex = localStorage.getItem('lastParagraphIndex');
 
+    // Convert indices to integers
     lastBackgroundIndex = lastBackgroundIndex ? parseInt(lastBackgroundIndex) : -1;
     lastParagraphIndex = lastParagraphIndex ? parseInt(lastParagraphIndex) : -1;
 
+    // Set a new random background
     const newBackgroundIndex = getRandomIndex(backgrounds, lastBackgroundIndex);
     localStorage.setItem('lastBackgroundIndex', newBackgroundIndex);
     document.body.style.backgroundImage = `url('${backgrounds[newBackgroundIndex]}')`;
 
+    // Set a new random paragraph
     const newParagraphIndex = getRandomIndex(paragraphs, lastParagraphIndex);
     localStorage.setItem('lastParagraphIndex', newParagraphIndex);
-    document.getElementById('randomParagraph').textContent = paragraphs[newParagraphIndex];
+    document.getElementById('randomParagraph').innerHTML = paragraphs[newParagraphIndex].trim();
 </script>
-
 </body>
 </html>
+
