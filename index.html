@@ -49,7 +49,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem !important; /* Ensure consistent font size across paragraphs */
+            font-size: 1.2rem; /* Ensure consistent font size across paragraphs */
             word-wrap: break-word; /* Prevent text overflow */
             width: 100%;
             max-width: 600px; /* Prevent the paragraph from stretching too wide */
@@ -57,7 +57,7 @@
             margin-right: auto; /* Center the paragraph */
             display: inline-block;
             white-space: normal; /* Ensure proper line breaks */
-            word-break: break-word; /* Prevent long words from breaking awkwardly */
+            overflow-wrap: break-word; /* Avoid breaking words unnecessarily */
         }
 
         /* Keyframes for animations */
@@ -90,12 +90,13 @@
             }
 
             p {
-                font-size: 1.2rem !important; /* Keep font size the same for all paragraphs */
+                font-size: 1.2rem; /* Keep font size the same for all paragraphs */
                 width: 90%; /* Adjust width for better fit */
                 max-width: 500px;
                 margin-left: auto;
                 margin-right: auto; /* Center text */
-                word-break: break-word; /* Prevent awkward line breaks */
+                overflow-wrap: break-word; /* Ensure no overflow */
+                word-wrap: break-word; /* Avoid breaking words awkwardly */
             }
         }
 
@@ -106,7 +107,7 @@
             }
 
             p {
-                font-size: 1.2rem !important; /* Keep font size consistent */
+                font-size: 1.2rem; /* Keep font size consistent */
                 width: 80%;
                 max-width: 600px;
             }
@@ -186,6 +187,7 @@
     </script>
 </body>
 </html>
+
 
 
 
