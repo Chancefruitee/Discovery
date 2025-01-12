@@ -37,29 +37,10 @@
             margin: 0;
             color: #fff;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-            font-size: 3rem; /* Increase title font size */
+            font-size: 3rem; /* Larger font for title */
         }
 
-        h1::before,
-        h1::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: #fff;
-            width: 80%; /* Lines are the same width as the title */
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h1::before {
-            top: -10px; /* Line above the title */
-        }
-
-        h1::after {
-            bottom: -10px; /* Line below the title */
-        }
-
-        /* Paragraph styles for all paragraphs */
+        /* Paragraph styles */
         p {
             line-height: 1.8;
             transform: translateY(100px);
@@ -68,7 +49,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem !important; /* Force consistent font size */
+            font-size: 1.2rem !important; /* Ensure consistent font size across paragraphs */
             word-wrap: break-word; /* Prevent text overflow */
             width: 100%;
             max-width: 600px; /* Prevent the paragraph from stretching too wide */
@@ -104,25 +85,27 @@
         /* Portrait mode - smaller screens */
         @media screen and (max-width: 600px) and (orientation: portrait) {
             h1 {
-                font-size: 2.5rem; /* Adjust title font size for portrait */
+                font-size: 2.5rem; /* Adjust font size for portrait */
             }
 
             p {
-                font-size: 1.1rem !important; /* Adjust font size for paragraph in portrait */
-                width: 90%; /* Ensure paragraph fits well */
-                max-width: 600px;
+                font-size: 1.2rem !important; /* Keep font size the same for all paragraphs */
+                width: 90%; /* Adjust width for better fit */
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto; /* Center text */
             }
         }
 
         /* Landscape mode - larger screens */
         @media screen and (min-width: 601px) and (orientation: landscape) {
             h1 {
-                font-size: 3rem; /* Larger title font size for landscape */
+                font-size: 3rem; /* Larger font for landscape mode */
             }
 
             p {
-                font-size: 1.2rem !important; /* Keep the paragraph consistent for landscape */
-                width: 80%; /* Adjust width for landscape */
+                font-size: 1.2rem !important; /* Keep font size consistent */
+                width: 80%;
                 max-width: 600px;
             }
         }
