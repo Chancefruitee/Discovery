@@ -77,12 +77,6 @@
             white-space: normal; /* Ensure proper line breaks */
         }
 
-        /* Special case for the paragraph with 'You light up my life' */
-        #paragraph-you-light-up {
-            font-size: 1.2rem; /* Explicitly define font size */
-            line-height: 1.8; /* Ensure line height consistency */
-        }
-
         /* Keyframes for animations */
         @keyframes fadeInBlur {
             0% {
@@ -106,20 +100,15 @@
             }
         }
 
-        /* Responsive typography for mobile devices */
+        /* Ensuring that no paragraph font size changes in mobile */
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 2.5rem; /* Larger title for smaller screens */
             }
 
             p {
-                font-size: 1.1rem; /* Smaller but consistent font size for mobile devices */
+                font-size: 1.2rem !important; /* Ensure font size stays fixed */
                 width: 80%; /* Ensure it fits well on smaller screens */
-            }
-
-            /* Ensuring "You light up my life" paragraph doesn't shrink */
-            #paragraph-you-light-up {
-                font-size: 1.2rem !important; /* Force font size to stay consistent */
             }
         }
     </style>
