@@ -101,15 +101,28 @@
             }
         }
 
-        /* Mobile device styling */
-        @media screen and (max-width: 600px) {
+        /* Portrait mode - smaller screens */
+        @media screen and (max-width: 600px) and (orientation: portrait) {
             h1 {
-                font-size: 2.5rem; /* Adjust title font size for mobile */
+                font-size: 2.5rem; /* Adjust title font size for portrait */
             }
 
             p {
-                font-size: 1.2rem !important; /* Force consistent font size on mobile */
-                width: 80%; /* Ensure the paragraph fits well on mobile */
+                font-size: 1.1rem !important; /* Adjust font size for paragraph in portrait */
+                width: 90%; /* Ensure paragraph fits well */
+                max-width: 600px;
+            }
+        }
+
+        /* Landscape mode - larger screens */
+        @media screen and (min-width: 601px) and (orientation: landscape) {
+            h1 {
+                font-size: 3rem; /* Larger title font size for landscape */
+            }
+
+            p {
+                font-size: 1.2rem !important; /* Keep the paragraph consistent for landscape */
+                width: 80%; /* Adjust width for landscape */
                 max-width: 600px;
             }
         }
@@ -188,5 +201,6 @@
     </script>
 </body>
 </html>
+
 
 
