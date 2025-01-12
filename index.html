@@ -158,9 +158,46 @@
 
             `I am not greedy. There is only one small wish: you will always be in my life.<br>
             Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.<br>
-            No soy codicioso. Solo tengo un peque
+            No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.<br>
+            我并不贪心，只有一个小小的愿望：你永远在我身边。`,
 
+            `There is nothing in the world that I can’t put aside except you.<br>
+            Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.<br>
+            No hay nada en el mundo que no pueda dejar de lado excepto tú.<br>
+            这个世界上除了你，没有什么事我放不下的。`,
 
+            `You light up my life.<br>
+            Tu illumines ma vie.<br>
+            Tú iluminas mi vida.<br>
+            你照亮了我的生命。`
+        ];
+
+        function getRandomIndex(list, lastIndex) {
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * list.length);
+            } while (newIndex === lastIndex);
+            return newIndex;
+        }
+
+        let lastBackgroundIndex = localStorage.getItem('lastBackgroundIndex');
+        let lastParagraphIndex = localStorage.getItem('lastParagraphIndex');
+
+        lastBackgroundIndex = lastBackgroundIndex ? parseInt(lastBackgroundIndex) : -1;
+        lastParagraphIndex = lastParagraphIndex ? parseInt(lastParagraphIndex) : -1;
+
+        const newBackgroundIndex = getRandomIndex(backgrounds, lastBackgroundIndex);
+        localStorage.setItem('lastBackgroundIndex', newBackgroundIndex);
+        document.body.style.backgroundImage = `url('${backgrounds[newBackgroundIndex]}')`;
+
+        const newParagraphIndex = getRandomIndex(paragraphs, lastParagraphIndex);
+        localStorage.setItem('lastParagraphIndex', newParagraphIndex);
+
+        const paragraphElement = document.getElementById('randomParagraph');
+        paragraphElement.innerHTML = paragraphs[newParagraphIndex];
+    </script>
+</body>
+</html>
 
 
 
