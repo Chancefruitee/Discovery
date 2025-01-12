@@ -32,7 +32,7 @@
         }
 
         .line {
-            height: 2px;
+            height: 4px; /* Increased line thickness */
             margin: 5px auto;
             background-color: #fff;
             opacity: 0;
@@ -61,7 +61,7 @@
             margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 2.5vw; /* Uniform scaling across all paragraphs */
+            font-size: 2vw; /* Reduced default paragraph font size */
             word-wrap: break-word;
             width: 100%;
             max-width: 600px;
@@ -101,7 +101,7 @@
             }
 
             p {
-                font-size: 4vw; /* Adjust paragraph font size for smaller devices */
+                font-size: 3.5vw; /* Adjust paragraph font size for smaller devices */
             }
 
             .line {
@@ -112,13 +112,13 @@
         /* Portrait and landscape adjustments */
         @media screen and (orientation: portrait) {
             p {
-                font-size: 4vw;
+                font-size: 3.5vw; /* Slightly smaller for portrait view */
             }
         }
 
         @media screen and (orientation: landscape) {
             p {
-                font-size: 3vw;
+                font-size: 2vw; /* Keep the font size smaller for landscape */
             }
         }
     </style>
@@ -198,6 +198,7 @@
     </script>
 </body>
 </html>
+
 
 
 
