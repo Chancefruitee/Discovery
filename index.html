@@ -53,7 +53,7 @@
             margin: 10px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.1rem !important; /* Ensuring consistent font size */
+            font-size: 1.1rem; /* Ensuring consistent font size */
             word-wrap: break-word;
             width: 95%;
             max-width: 700px;
@@ -67,6 +67,7 @@
         p span {
             display: block;
             margin-left: 2rem; /* Adds indentation for each language line */
+            font-size: inherit; /* Ensures spans inherit the font size from the paragraph */
         }
 
         /* Keyframes for animations */
@@ -99,7 +100,7 @@
             }
 
             p {
-                font-size: 1.1rem !important; /* Ensure consistency on smaller screens */
+                font-size: 1.1rem; /* Ensure consistency on smaller screens */
                 width: 90%;
             }
         }
@@ -107,14 +108,14 @@
         /* Portrait mode adjustments */
         @media screen and (orientation: portrait) {
             p {
-                font-size: 1.1rem !important; /* Ensure no shrinking font size in portrait mode */
+                font-size: 1.1rem; /* Ensure no shrinking font size in portrait mode */
             }
         }
 
         /* Landscape mode adjustments */
         @media screen and (orientation: landscape) {
             p {
-                font-size: 1.1rem !important; /* Ensure no shrinking font size in landscape mode */
+                font-size: 1.1rem; /* Ensure no shrinking font size in landscape mode */
             }
         }
     </style>
