@@ -48,7 +48,6 @@
         /* Paragraph styling */
         p {
             line-height: 1.8;
-            transform: translateY(100px);
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
             margin: 10px 0;
@@ -102,6 +101,20 @@
             p {
                 font-size: 1.1rem !important; /* Ensure consistency on smaller screens */
                 width: 90%;
+            }
+        }
+
+        /* Portrait mode adjustments */
+        @media screen and (orientation: portrait) {
+            p {
+                font-size: 1.1rem !important; /* Ensure no shrinking font size in portrait mode */
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media screen and (orientation: landscape) {
+            p {
+                font-size: 1.1rem !important; /* Ensure no shrinking font size in landscape mode */
             }
         }
     </style>
