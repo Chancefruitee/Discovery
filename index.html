@@ -48,13 +48,13 @@
 
         /* Paragraph styling */
         p {
-            line-height: 1.8;
+            line-height: 2;
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
             margin: 10px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 17.6px !important; /* Using fixed pixel size instead of rem */
+            font-size: 22px !important; /* Increased fixed pixel size */
             word-wrap: break-word;
             width: 95%;
             max-width: 700px;
@@ -68,14 +68,14 @@
         p span {
             display: block;
             margin-left: 2rem;
-            font-size: 17.6px !important; /* Match parent paragraph size */
-            line-height: 1.8;
+            font-size: 22px !important; /* Match parent paragraph size */
+            line-height: 2;
             text-align: center;
         }
 
         /* Remove extra whitespace between spans */
         p span + span {
-            margin-top: 0.5rem;
+            margin-top: 0.7rem;
         }
 
         /* Keyframes for animations */
@@ -108,7 +108,7 @@
             }
 
             p, p span {
-                font-size: 17.6px !important;
+                font-size: 20px !important; /* Slightly smaller on mobile but still readable */
                 width: 90%;
                 margin-left: auto;
                 margin-right: auto;
@@ -118,27 +118,25 @@
         /* Portrait mode adjustments */
         @media screen and (orientation: portrait) {
             p, p span {
-                font-size: 17.6px !important;
+                font-size: 20px !important;
             }
         }
 
         /* Landscape mode adjustments */
         @media screen and (orientation: landscape) {
             p, p span {
-                font-size: 17.6px !important;
+                font-size: 20px !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Rest of your HTML and JavaScript code remains the same -->
     <div class="content">
         <h1>Chance Fruitee</h1>
         <p id="randomParagraph">Loading...</p>
     </div>
 
     <script>
-        // Your existing JavaScript code remains unchanged
         const backgrounds = [
             'https://chancefruitee.github.io/Discovery/Background-001.JPG',
             'https://chancefruitee.github.io/Discovery/Background-002.JPG',
