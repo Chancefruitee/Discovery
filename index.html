@@ -22,6 +22,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            -webkit-text-size-adjust: 100%; /* Prevent iOS font scaling */
         }
 
         /* Centered content styling */
@@ -53,21 +54,28 @@
             margin: 10px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 1.1rem; /* Ensuring consistent font size */
+            font-size: 17.6px !important; /* Using fixed pixel size instead of rem */
             word-wrap: break-word;
             width: 95%;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             display: inline-block;
-            white-space: pre-line; /* Ensures line breaks for tabbed languages */
+            white-space: pre-line;
         }
 
         /* Indentation for multilingual text */
         p span {
             display: block;
-            margin-left: 2rem; /* Adds indentation for each language line */
-            font-size: inherit; /* Ensures spans inherit the font size from the paragraph */
+            margin-left: 2rem;
+            font-size: 17.6px !important; /* Match parent paragraph size */
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Remove extra whitespace between spans */
+        p span + span {
+            margin-top: 0.5rem;
         }
 
         /* Keyframes for animations */
@@ -99,34 +107,38 @@
                 font-size: 2.5rem;
             }
 
-            p {
-                font-size: 1.1rem; /* Ensure consistency on smaller screens */
+            p, p span {
+                font-size: 17.6px !important;
                 width: 90%;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
         /* Portrait mode adjustments */
         @media screen and (orientation: portrait) {
-            p {
-                font-size: 1.1rem; /* Ensure no shrinking font size in portrait mode */
+            p, p span {
+                font-size: 17.6px !important;
             }
         }
 
         /* Landscape mode adjustments */
         @media screen and (orientation: landscape) {
-            p {
-                font-size: 1.1rem; /* Ensure no shrinking font size in landscape mode */
+            p, p span {
+                font-size: 17.6px !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Rest of your HTML and JavaScript code remains the same -->
     <div class="content">
         <h1>Chance Fruitee</h1>
         <p id="randomParagraph">Loading...</p>
     </div>
 
     <script>
+        // Your existing JavaScript code remains unchanged
         const backgrounds = [
             'https://chancefruitee.github.io/Discovery/Background-001.JPG',
             'https://chancefruitee.github.io/Discovery/Background-002.JPG',
@@ -146,7 +158,7 @@
         ];
 
         const paragraphs = [
-            `<span>I can’t give you the world, but my whole world.</span>
+            `<span>I can't give you the world, but my whole world.</span>
              <span>Je ne peux pas te donner le monde, mais mon monde entier.</span>
              <span>No puedo darte el mundo, pero tú eres todo mi mundo.</span>
              <span>我或许无法给你全世界，但你却是我全部世界。</span>`,
@@ -156,7 +168,7 @@
              <span>No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.</span>
              <span>我并不贪心，只有一个小小的愿望：你永远在我身边。</span>`,
 
-            `<span>There is nothing in the world that I can’t put aside except you.</span>
+            `<span>There is nothing in the world that I can't put aside except you.</span>
              <span>Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.</span>
              <span>No hay nada en el mundo que no pueda dejar de lado excepto tú.</span>
              <span>这个世界上除了你，没有什么事我放不下的。</span>`,
