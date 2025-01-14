@@ -22,7 +22,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            -webkit-text-size-adjust: 100%; /* Prevent iOS font scaling */
+            -webkit-text-size-adjust: 100%;
         }
 
         /* Centered content styling */
@@ -48,13 +48,13 @@
 
         /* Paragraph styling */
         p {
-            line-height: 2;
+            line-height: 1.6;
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
             margin: 10px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 22px !important; /* Increased fixed pixel size */
+            font-size: 28px; /* Base size increased */
             word-wrap: break-word;
             width: 95%;
             max-width: 700px;
@@ -68,14 +68,14 @@
         p span {
             display: block;
             margin-left: 2rem;
-            font-size: 22px !important; /* Match parent paragraph size */
-            line-height: 2;
+            font-size: inherit; /* Inherit from parent paragraph */
+            line-height: 1.6;
             text-align: center;
         }
 
         /* Remove extra whitespace between spans */
         p span + span {
-            margin-top: 0.7rem;
+            margin-top: 1rem;
         }
 
         /* Keyframes for animations */
@@ -101,31 +101,35 @@
             }
         }
 
-        /* Responsive styling for smaller screens */
-        @media screen and (max-width: 600px) {
+        /* Portrait mode adjustments */
+        @media screen and (orientation: portrait) {
+            .content {
+                padding: 10px;
+            }
+            
             h1 {
                 font-size: 2.5rem;
             }
 
-            p, p span {
-                font-size: 20px !important; /* Slightly smaller on mobile but still readable */
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
+            p {
+                font-size: 32px !important; /* Much larger font size for portrait mode */
+                line-height: 1.4;
+                width: 100%;
+                margin: 15px 0;
             }
-        }
 
-        /* Portrait mode adjustments */
-        @media screen and (orientation: portrait) {
-            p, p span {
-                font-size: 20px !important;
+            p span {
+                margin-left: 0; /* Remove indentation on mobile */
+                margin-right: 0;
+                padding: 0 10px;
+                margin-bottom: 10px;
             }
         }
 
         /* Landscape mode adjustments */
         @media screen and (orientation: landscape) {
             p, p span {
-                font-size: 20px !important;
+                font-size: 28px;
             }
         }
     </style>
