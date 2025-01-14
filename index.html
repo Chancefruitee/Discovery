@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chance Fruitee</title>
     <style>
-        /* Root font size for consistent scaling */
         html {
-            font-size: 16px;
+            font-size: 16px; /* Set root font size explicitly */
         }
 
-        /* Basic body styling */
         body {
             margin: 0;
             padding: 0;
@@ -24,18 +22,16 @@
             background-repeat: no-repeat;
         }
 
-        /* Centered content styling */
         .content {
             text-align: center;
             padding: 20px;
-            width: 90%;
-            max-width: 800px;
+            width: 90%; /* Increased width to reduce margins */
+            max-width: 900px; /* Slightly larger for wide screens */
         }
 
-        /* Title styling */
         h1 {
+            display: inline-block;
             position: relative;
-            top: -5px;
             opacity: 0;
             filter: blur(10px);
             animation: fadeInBlur 2s ease-out forwards;
@@ -45,29 +41,28 @@
             font-size: 3rem;
         }
 
-        /* Paragraph styling */
         p {
             line-height: 1.8;
             transform: translateY(100px);
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
-            margin: 10px 0;
+            margin: 20px 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
             font-size: 1.1rem;
             word-wrap: break-word;
-            width: 95%;
+            width: 95%; /* Reduced left and right margins */
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             display: inline-block;
-            white-space: pre-line; /* Ensures line breaks for tabbed languages */
+            white-space: pre-line;
         }
 
         /* Indentation for multilingual text */
         p span {
             display: block;
-            margin-left: 2rem; /* Adds indentation for each language line */
+            margin-left: 2em; /* Add consistent tab spacing */
         }
 
         /* Keyframes for animations */
@@ -93,29 +88,14 @@
             }
         }
 
-        /* Responsive styling for smaller screens */
+        /* Responsive typography for mobile devices */
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 2.5rem;
             }
 
             p {
-                font-size: 1rem;
-                width: 90%;
-            }
-        }
-
-        /* Portrait mode adjustments */
-        @media screen and (orientation: portrait) {
-            p {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Landscape mode adjustments */
-        @media screen and (orientation: landscape) {
-            p {
-                font-size: 1.1rem;
+                font-size: 1rem; /* Adjusted for smaller screens */
             }
         }
     </style>
@@ -123,7 +103,66 @@
 <body>
     <div class="content">
         <h1>Chance Fruitee</h1>
-        <p id="randomParagraph">Loading...</p>
+        <p>
+            <span>I can’t give you the world, but my whole world.</span>
+            <span>Je ne peux pas te donner le monde, mais mon monde entier.</span>
+            <span>No puedo darte el mundo, pero tú eres todo mi mundo.</span>
+            <span>我或许无法给你全世界，但你却是我全部世界。</span>
+        </p>
+        <p>
+            <span>I am not greedy. There is only one small wish: you will always be in my life.</span>
+            <span>Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.</span>
+            <span>No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.</span>
+            <span>我并不贪心，只有一个小小的愿望：你永远在我身边。</span>
+        </p>
+        <p>
+            <span>There is nothing in the world that I can’t put aside except you.</span>
+            <span>Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.</span>
+            <span>No hay nada en el mundo que no pueda dejar de lado excepto tú.</span>
+            <span>这个世界上除了你，没有什么事我放不下的。</span>
+        </p>
+        <p>
+            <span>You light up my life.</span>
+            <span>Tu illumines ma vie.</span>
+            <span>Tú iluminas mi vida.</span>
+            <span>你照亮了我的生命。</span>
+        </p>
+        <p>
+            <span>I’m lazy and I don’t have any special skills, but I love you very well.</span>
+            <span>Je suis paresseux et je n'ai pas de compétences particulières, mais je t'aime très bien.</span>
+            <span>Soy perezoso y no tengo habilidades especiales, pero te quiero mucho.</span>
+            <span>我很懒，也没有什么特长，但爱你事一把好手。</span>
+        </p>
+        <p>
+            <span>It is you who write all the mountains, and you are the beauty of the stars.</span>
+            <span>C'est toi qui écris toutes les montagnes et tu es la beauté des étoiles.</span>
+            <span>Eres tú quien escribe todas las montañas y eres la belleza de las estrellas.</span>
+            <span>写尽千山落笔是你，望尽星辰美丽是你。</span>
+        </p>
+        <p>
+            <span>Nothing is as sweet as you.</span>
+            <span>Rien n'est aussi doux que toi.</span>
+            <span>Nada es tan dulce como tú.</span>
+            <span>在没什么，能甜蜜如你。</span>
+        </p>
+        <p>
+            <span>Darling, you are all I ever wanted love to be.</span>
+            <span>Chéri(e), tu es tout ce que j'ai toujours voulu que l'amour soit.</span>
+            <span>Cariño, eres todo lo que siempre quise que fuera el amor.</span>
+            <span>亲爱的，你就是我想要的爱。</span>
+        </p>
+        <p>
+            <span>The wind is gentle, and you are special.</span>
+            <span>Le vent est doux, et tu es spécial(e).</span>
+            <span>El viento es suave, y tú eres especial.</span>
+            <span>风轻柔，唯你独特可贵。</span>
+        </p>
+        <p>
+            <span>You complete me.</span>
+            <span>Tu me complètes.</span>
+            <span>Tú me completas.</span>
+            <span>有了你，我的世界更加完整。</span>
+        </p>
     </div>
 
     <script>
@@ -131,70 +170,23 @@
             'https://chancefruitee.github.io/Discovery/Background-001.JPG',
             'https://chancefruitee.github.io/Discovery/Background-002.JPG',
             'https://chancefruitee.github.io/Discovery/Background-003.PNG',
-            'https://chancefruitee.github.io/Discovery/Background-004.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-005.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-006.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-007.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-008.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-009.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-010.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-011.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-012.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-013.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-014.JPG',
-            'https://chancefruitee.github.io/Discovery/Background-015.JPG'
+            // Add all your other background URLs here
         ];
 
-        const paragraphs = [
-            `<span>I can’t give you the world, but my whole world.</span>
-             <span>Je ne peux pas te donner le monde, mais mon monde entier.</span>
-             <span>No puedo darte el mundo, pero tú eres todo mi mundo.</span>
-             <span>我或许无法给你全世界，但你却是我全部世界。</span>`,
-
-            `<span>I am not greedy. There is only one small wish: you will always be in my life.</span>
-             <span>Je ne suis pas avide. Il n'y a qu'un petit souhait : que tu sois toujours dans ma vie.</span>
-             <span>No soy codicioso. Solo tengo un pequeño deseo: que siempre estés en mi vida.</span>
-             <span>我并不贪心，只有一个小小的愿望：你永远在我身边。</span>`,
-
-            `<span>There is nothing in the world that I can’t put aside except you.</span>
-             <span>Il n'y a rien dans le monde que je ne puisse mettre de côté sauf toi.</span>
-             <span>No hay nada en el mundo que no pueda dejar de lado excepto tú.</span>
-             <span>这个世界上除了你，没有什么事我放不下的。</span>`,
-
-            `<span>You light up my life.</span>
-             <span>Tu illumines ma vie.</span>
-             <span>Tú iluminas mi vida.</span>
-             <span>你照亮了我的生命。</span>`,
-
-            `<span>Darling, you are all I ever wanted love to be.</span>
-             <span>Chéri(e), tu es tout ce que j'ai toujours voulu que l'amour soit.</span>
-             <span>Cariño, eres todo lo que siempre quise que fuera el amor.</span>
-             <span>亲爱的，你就是我想要的爱。</span>`
-        ];
-
-        function getRandomIndex(list, lastIndex) {
+        const getRandomIndex = (list, lastIndex) => {
             let newIndex;
             do {
                 newIndex = Math.floor(Math.random() * list.length);
             } while (newIndex === lastIndex);
             return newIndex;
-        }
+        };
 
         let lastBackgroundIndex = localStorage.getItem('lastBackgroundIndex');
-        let lastParagraphIndex = localStorage.getItem('lastParagraphIndex');
-
         lastBackgroundIndex = lastBackgroundIndex ? parseInt(lastBackgroundIndex) : -1;
-        lastParagraphIndex = lastParagraphIndex ? parseInt(lastParagraphIndex) : -1;
 
         const newBackgroundIndex = getRandomIndex(backgrounds, lastBackgroundIndex);
         localStorage.setItem('lastBackgroundIndex', newBackgroundIndex);
         document.body.style.backgroundImage = `url('${backgrounds[newBackgroundIndex]}')`;
-
-        const newParagraphIndex = getRandomIndex(paragraphs, lastParagraphIndex);
-        localStorage.setItem('lastParagraphIndex', newParagraphIndex);
-
-        const paragraphElement = document.getElementById('randomParagraph');
-        paragraphElement.innerHTML = paragraphs[newParagraphIndex];
     </script>
 </body>
 </html>
