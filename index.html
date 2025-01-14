@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Chance Fruitee</title>
     <style>
         /* Root font size for consistent scaling */
@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,9 +28,10 @@
         /* Centered content styling */
         .content {
             text-align: center;
-            padding: 20px;
+            padding: 1.25rem;
             width: 90%;
-            max-width: 800px;
+            max-width: 50rem;
+            margin: auto;
         }
 
         /* Title styling */
@@ -39,10 +40,10 @@
             opacity: 0;
             filter: blur(10px);
             animation: fadeInBlur 2s ease-out forwards;
-            margin: 0 0 40px 0; /* Added bottom margin for spacing */
+            margin: 0 0 2rem 0;
             color: #fff;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-            font-size: 4rem; /* Increased from 3rem to 4rem */
+            font-size: 2.5rem;
         }
 
         /* Paragraph styling */
@@ -50,13 +51,13 @@
             line-height: 1.6;
             opacity: 0;
             animation: slideIn 2s ease-out 2s forwards;
-            margin: 10px 0;
+            margin: 0.625rem 0;
             color: #fff;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-            font-size: 28px;
+            font-size: 1.25rem;
             word-wrap: break-word;
             width: 95%;
-            max-width: 700px;
+            max-width: 43.75rem;
             margin-left: auto;
             margin-right: auto;
             display: inline-block;
@@ -66,18 +67,19 @@
         /* Indentation for multilingual text */
         p span {
             display: block;
-            margin-left: 2rem;
+            margin-left: 0;
             font-size: inherit;
             line-height: 1.6;
             text-align: center;
+            padding: 0.5rem;
         }
 
         /* Remove extra whitespace between spans */
         p span + span {
-            margin-top: 1rem;
+            margin-top: 0.75rem;
         }
 
-        /* Keyframes for animations */
+        /* Animations */
         @keyframes fadeInBlur {
             0% {
                 opacity: 0;
@@ -91,7 +93,7 @@
 
         @keyframes slideIn {
             0% {
-                transform: translateY(100px);
+                transform: translateY(3.125rem);
                 opacity: 0;
             }
             100% {
@@ -100,40 +102,103 @@
             }
         }
 
-        /* Portrait mode adjustments */
-        @media screen and (orientation: portrait) {
-            .content {
-                padding: 10px;
+        /* Small phones (portrait) */
+        @media screen and (max-width: 375px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
             }
             
-            h1 {
-                font-size: 3.5rem; /* Adjusted for mobile but still large */
-                margin-bottom: 50px; /* Even more space on mobile */
-            }
-
             p {
-                font-size: 32px !important;
-                line-height: 1.4;
-                width: 100%;
-                margin: 15px 0;
-            }
-
-            p span {
-                margin-left: 0;
-                margin-right: 0;
-                padding: 0 10px;
-                margin-bottom: 10px;
+                font-size: 1rem;
             }
         }
 
-        /* Landscape mode adjustments */
-        @media screen and (orientation: landscape) {
+        /* Medium phones (portrait) */
+        @media screen and (min-width: 376px) and (max-width: 428px) {
             h1 {
-                margin-bottom: 30px;
+                font-size: 2.25rem;
+                margin-bottom: 1.75rem;
             }
             
-            p, p span {
-                font-size: 28px;
+            p {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Landscape mode for phones */
+        @media screen and (max-height: 428px) and (orientation: landscape) {
+            .content {
+                padding: 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            p {
+                font-size: 0.875rem;
+                line-height: 1.3;
+            }
+
+            p span {
+                margin-bottom: 0.25rem;
+                padding: 0.25rem;
+            }
+        }
+
+        /* Tablets and iPads */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            p {
+                font-size: 1.5rem;
+            }
+
+            p span {
+                padding: 0.75rem;
+            }
+        }
+
+        /* Large screens */
+        @media screen and (min-width: 1025px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            p {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* iOS specific adjustments */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+
+            @media screen and (orientation: landscape) {
+                .content {
+                    padding: 0.5rem;
+                }
+                
+                h1 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    font-size: 0.8125rem;
+                    line-height: 1.2;
+                }
+
+                p span {
+                    padding: 0.25rem;
+                    margin-top: 0.25rem;
+                }
             }
         }
     </style>
@@ -163,7 +228,7 @@
             'https://chancefruitee.github.io/Discovery/Background-015.JPG'
         ];
 
-        const paragraphs = [
+ const paragraphs = [
             `<span>I can't give you the world, but my whole world.</span>
              <span>Je ne peux pas te donner le monde, mais mon monde entier.</span>
              <span>No puedo darte el mundo, pero tú eres todo mi mundo.</span>
@@ -229,6 +294,7 @@
              <span>Eres mi hoy y todos mis mañanas.</span>
              <span>你是我的今天和所有的明天.</span>`
         ];
+
 
         function getRandomIndex(list, lastIndex) {
             let newIndex;
