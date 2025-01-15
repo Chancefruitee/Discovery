@@ -34,16 +34,17 @@
             margin: auto;
         }
 
-        /* Logo styling */
-.logo {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0 0 2rem 0;
-    opacity: 0;
-    filter: blur(10px);
-    animation: fadeInBlur 2s ease-out forwards;
-}
+        /* Title styling */
+        h1 {
+            position: relative;
+            opacity: 0;
+            filter: blur(10px);
+            animation: fadeInBlur 2s ease-out forwards;
+            margin: 0 0 2rem 0;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+        }
 
         /* Paragraph styling */
         p {
@@ -103,8 +104,8 @@
 
         /* Small phones (portrait) */
         @media screen and (max-width: 375px) {
-            .logo {
-                max-width: 200px;
+            h1 {
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
             }
             
@@ -115,8 +116,8 @@
 
         /* Medium phones (portrait) */
         @media screen and (min-width: 376px) and (max-width: 428px) {
-            .logo {
-                max-width: 250px;
+            h1 {
+                font-size: 2.25rem;
                 margin-bottom: 1.75rem;
             }
             
@@ -131,8 +132,8 @@
                 padding: 0.75rem;
             }
 
-            .logo {
-                max-width: 150px;
+            h1 {
+                font-size: 1.75rem;
                 margin-bottom: 0.75rem;
             }
             
@@ -149,8 +150,8 @@
 
         /* Tablets and iPads */
         @media screen and (min-width: 768px) and (max-width: 1024px) {
-            .logo {
-                max-width: 350px;
+            h1 {
+                font-size: 3rem;
             }
             
             p {
@@ -164,8 +165,8 @@
 
         /* Large screens */
         @media screen and (min-width: 1025px) {
-            .logo {
-                max-width: 400px;
+            h1 {
+                font-size: 3.5rem;
             }
             
             p {
@@ -184,8 +185,8 @@
                     padding: 0.5rem;
                 }
                 
-                .logo {
-                    max-width: 120px;
+                h1 {
+                    font-size: 1.5rem;
                     margin-bottom: 0.5rem;
                 }
 
@@ -204,7 +205,7 @@
 </head>
 <body>
     <div class="content">
-        <img src="https://chancefruitee.github.io/Discovery/Logo_ChanceFruite.jpg" alt="Chance Fruitee Logo" class="logo">
+        <h1>Chance Fruitee</h1>
         <p id="randomParagraph">Loading...</p>
     </div>
 
@@ -227,7 +228,7 @@
             'https://chancefruitee.github.io/Discovery/Background-015.JPG'
         ];
 
-        const paragraphs = [
+ const paragraphs = [
             `<span>I can't give you the world, but my whole world.</span>
              <span>Je ne peux pas te donner le monde, mais mon monde entier.</span>
              <span>No puedo darte el mundo, pero tú eres todo mi mundo.</span>
@@ -248,7 +249,7 @@
              <span>Tú iluminas mi vida.</span>
              <span>你照亮了我的生命。</span>`,
 
-            `<span>I'm lazy and I don't have any special skills, but I love you very well.</span>
+            `<span>I’m lazy and I don’t have any special skills, but I love you very well.</span>
              <span>Je suis paresseux et je n'ai pas de compétences particulières, mais je t'aime très bien.</span>
              <span>Soy perezoso y no tengo habilidades especiales, pero te quiero mucho.</span>
              <span>我很懒，也没有什么特长，但爱你事一把好手.</span>`,
@@ -283,7 +284,7 @@
              <span>Decidimos qué será nuestra historia.</span>
              <span>我们的故事，由自己书写.</span>`,
 
-            `<span>It's my blessing to meet you.</span>
+            `<span>It’s my blessing to meet you.</span>
              <span>C'est un bonheur de t'avoir rencontré.</span>
              <span>Es una bendición haberte conocido.</span>
              <span>遇见你我何其幸运.</span>`,
@@ -293,6 +294,7 @@
              <span>Eres mi hoy y todos mis mañanas.</span>
              <span>你是我的今天和所有的明天.</span>`
         ];
+
 
         function getRandomIndex(list, lastIndex) {
             let newIndex;
