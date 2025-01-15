@@ -35,15 +35,17 @@
         }
 
         /* Logo styling */
-        .logo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin: 0 0 2rem 0;
-            opacity: 0;
-            filter: blur(10px);
-            animation: fadeInBlur 2s ease-out forwards;
-        }
+.logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 0 2rem 0;
+    opacity: 0;
+    filter: blur(10px);
+    animation: fadeInBlur 2s ease-out forwards;
+    mix-blend-mode: multiply; /* Makes white background blend with the background image */
+    background-color: transparent; /* Ensures transparency */
+}
 
         /* Paragraph styling */
         p {
