@@ -23,6 +23,7 @@
             background-position: center;
             background-repeat: no-repeat;
             -webkit-text-size-adjust: 100%;
+            perspective: 1000px; /* Add perspective for 3D effect */
         }
 
         /* Centered content styling */
@@ -46,18 +47,64 @@
             font-size: 2.5rem;
         }
 
+        /* Card container styling */
+        .card-container {
+            width: 100%;
+            max-width: 43.75rem;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: flipCard 2s ease-out 1s forwards;
+        }
+
+        /* Card styling */
+        .card {
+            width: 100%;
+            min-height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            backface-visibility: hidden;
+        }
+
+        /* Card front side */
+        .card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 15px;
+            transform: rotateY(180deg);
+        }
+
+        /* Card back side */
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: url('https://img.freepik.com/free-vector/vintage-ornamental-cards-pattern_52683-34088.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+        }
+
         /* Paragraph styling */
         p {
             line-height: 1.6;
-            opacity: 0;
-            animation: slideIn 2s ease-out 2s forwards;
             margin: 0.625rem 0;
-            color: #fff;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+            color: #333;
             font-size: 1.25rem;
             word-wrap: break-word;
             width: 95%;
-            max-width: 43.75rem;
+            padding: 1rem;
             margin-left: auto;
             margin-right: auto;
             display: inline-block;
@@ -91,114 +138,28 @@
             }
         }
 
-        @keyframes slideIn {
+        @keyframes flipCard {
             0% {
-                transform: translateY(3.125rem);
-                opacity: 0;
+                transform: rotateY(0deg);
             }
             100% {
-                transform: translateY(0);
-                opacity: 1;
+                transform: rotateY(180deg);
             }
         }
 
-        /* Small phones (portrait) */
+        /* Media queries remain the same but adjust card heights */
         @media screen and (max-width: 375px) {
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            p {
-                font-size: 1rem;
-            }
+            .card { min-height: 250px; }
         }
 
-        /* Medium phones (portrait) */
-        @media screen and (min-width: 376px) and (max-width: 428px) {
-            h1 {
-                font-size: 2.25rem;
-                margin-bottom: 1.75rem;
-            }
-            
-            p {
-                font-size: 1.125rem;
-            }
-        }
-
-        /* Landscape mode for phones */
         @media screen and (max-height: 428px) and (orientation: landscape) {
-            .content {
-                padding: 0.75rem;
-            }
-
-            h1 {
-                font-size: 1.75rem;
-                margin-bottom: 0.75rem;
-            }
-            
-            p {
-                font-size: 0.875rem;
-                line-height: 1.3;
-            }
-
-            p span {
-                margin-bottom: 0.25rem;
-                padding: 0.25rem;
-            }
-        }
-
-        /* Tablets and iPads */
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
-            h1 {
-                font-size: 3rem;
-            }
-            
-            p {
-                font-size: 1.5rem;
-            }
-
-            p span {
-                padding: 0.75rem;
-            }
-        }
-
-        /* Large screens */
-        @media screen and (min-width: 1025px) {
-            h1 {
-                font-size: 3.5rem;
-            }
-            
-            p {
-                font-size: 1.75rem;
-            }
+            .card { min-height: 200px; }
         }
 
         /* iOS specific adjustments */
         @supports (-webkit-touch-callout: none) {
-            body {
-                min-height: -webkit-fill-available;
-            }
-
-            @media screen and (orientation: landscape) {
-                .content {
-                    padding: 0.5rem;
-                }
-                
-                h1 {
-                    font-size: 1.5rem;
-                    margin-bottom: 0.5rem;
-                }
-
-                p {
-                    font-size: 0.8125rem;
-                    line-height: 1.2;
-                }
-
-                p span {
-                    padding: 0.25rem;
-                    margin-top: 0.25rem;
-                }
+            .card-container {
+                transform: translateZ(0);
             }
         }
     </style>
@@ -206,7 +167,14 @@
 <body>
     <div class="content">
         <h1>Chance Fruitee</h1>
-        <p id="randomParagraph">Loading...</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-back"></div>
+                <div class="card-front">
+                    <p id="randomParagraph">Loading...</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
